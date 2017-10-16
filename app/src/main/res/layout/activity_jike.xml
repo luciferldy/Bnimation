@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dip">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <FrameLayout
+            android:id="@+id/message_like"
+            android:layout_width="36dip"
+            android:layout_height="36dip">
+
+            <io.luciferldy.bnimation.view.RippleView
+                android:id="@+id/ripple_view"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_gravity="center_vertical|right"/>
+
+            <ImageView
+                android:id="@+id/like_selected_shining"
+                android:layout_width="15dip"
+                android:layout_height="15dip"
+                android:layout_gravity="right"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:alpha="0"
+                android:layout_marginRight="7.5dip"
+                android:src="@drawable/ic_messages_like_selected_shining" />
+
+            <ImageView
+                android:id="@+id/like_selected"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="5dip"
+                android:layout_marginEnd="5dip"
+                android:src="@drawable/ic_messages_like_unselected"/>
+
+
+        </FrameLayout>
+
+        <io.luciferldy.bnimation.view.ScrollNumberView
+            android:id="@+id/message_like_number"
+            android:layout_width="45dip"
+            android:layout_height="40dip"
+            app:number="1000"
+            app:text_size="7dip"
+            app:padding_start="0dip"/>
+
+        <ImageView
+            android:layout_width="36dip"
+            android:layout_height="40dip"
+            android:scaleType="center"
+            android:src="@drawable/ic_messages_comment">
+
+        </ImageView>
+
+        <io.luciferldy.bnimation.view.ScrollNumberView
+            android:layout_width="45dip"
+            android:layout_height="40dip" />
+
+        <ImageView
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:scaleType="center"
+            android:src="@drawable/ic_messages_repost">
+
+        </ImageView>
+
+        <io.luciferldy.bnimation.view.ScrollNumberView
+            android:layout_width="45dip"
+            android:layout_height="40dip" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ripple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="ripple"/>
+
+    <Button
+        android:id="@+id/add1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="add1"/>
+
+    <Button
+        android:id="@+id/delete1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="delete1"/>
+
+    <io.luciferldy.bnimation.view.ScrollNumberView
+        android:id="@+id/show"
+        android:layout_width="200dip"
+        android:layout_height="80dip"
+        app:number="98"
+        app:text_size="24dip"
+        app:padding_start="10dip"/>
+
+    <TextView
+        android:layout_width="200dip"
+        android:layout_height="80dip"
+        android:text="98"/>
+
+</LinearLayout>

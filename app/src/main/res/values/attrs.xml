@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScrollNumberView">
+        <attr name="padding_start" format="dimension" />
+        <attr name="text_size" format="dimension" />
+        <attr name="number" format="integer" />
+        <attr name="duration" format="integer" />
+    </declare-styleable>
+</resources>
