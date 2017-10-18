@@ -2,7 +2,9 @@
 
 本项目来源于 [HenCoder「仿写酷界面」征稿 ](http://mp.weixin.qq.com/s/T5tymYD1jhvxHY8F51TV5Q)
 
-现阶段实现了模仿即刻点赞效果以及数字跳动增长。
+现阶段实现了模仿即刻点赞效果以及数字跳动增长，小米运动首页烟花转圈圈(•̀⌄•́)效果。
+
+### 即刻
 
 即刻的点赞效果
 
@@ -37,3 +39,43 @@ class Paint {
 图标来源于[即刻 App](https://www.ruguoapp.com/) 反编译后的资源包，布局也使用了即刻的布局（还是有些复杂的）
 
 ![](image/jike-layout.png)
+
+
+
+### 小米运动
+
+小米运动效果
+
+![](image/1.jpg)
+
+![](image/2.gif)
+
+上述 Gif 图中前半段是一个烟花转圈圈的效果，表示正在连接到运动设备，后烟花渐隐，出现计时的圆圈。烟花转圈的效果比较难实现，所以下文主要讲这个部分的实现。
+
+下面是我实现的效果：最下面是 `ProgressBar` 的展示。
+
+![](image/misport.gif)
+
+我将这个动画分为两部分： `ProgressBar` 就是按钮下方展示的，还有烟花效果 `Comet` 。
+
+`ProgressBar` 部分使用 `Canvas` + `Path` 完成，可以看到是 5 个圆圈按照某种梯度依次包含。每层圆圈使用 `SweepGradient`   实现了颜色渐变。这里面有个技巧：`SweepGradient` 颜色渐变如下分布
+
+![](image/sweep-gradient.jpg)
+
+其构造方法不提供初始的旋转角度，需要使用 `canvas.rotate()` 方法对画布进行旋转。当然，每次操作前记得 `canvas.save()` 操作后 `canvas.restore()` 
+
+烟花的效果参考了这篇文章[为你的EditText添加一个烟花效果](http://www.jianshu.com/p/a001192aaa4b) ，`Comet` 类存储了所有的尘埃 `Dust` 实例，在每个位置都会诞生出 `Dust` 而 `Dust ` 中包含了在此位置辐射的所有 `Element` 。
+
+值得注意的是模仿的是彗星运行的效果，所以每一处位置上辐射的 `Element` 范围在与前进方向相反的并且-30~30度内，大概就是这样的。
+
+![](image/ccomet.jpg)
+
+有点夸张了
+
+![](image/cccomet.jpg)
+
+将 `ProgressBar` 与 `Comet` 分开，由 `ProgressBar` 的滚动动画 `ObjectAnimator` 来驱动 `Comet` 产生 `Dust` 和执行 `Dust` 辐射效果。
+
+图片来源于 小米运动 App 反编译后的资源包， [HenCoder Android 开发进阶: 自定义 View 1-2 Paint 详解](http://hencoder.com/ui-1-2/) 关于 `SweepGradient` 的描述图片。
+
+做完这个项目之后突然惊觉：使用 `canvas` 画出一个圆圈，并在某个位置固定产生 `Dust `  并执行辐射效果，然后对 `canvas` 整体旋转不就得了。。。

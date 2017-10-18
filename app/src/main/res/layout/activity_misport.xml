@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="292dip">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_step_law"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/steps"
+            android:layout_width="wrap_content"
+            android:layout_height="57dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="105dip"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="0"
+            android:textSize="40dip" />
+
+        <LinearLayout
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="12dip"
+            android:layout_below="@id/steps"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/m"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:alpha="0.6"
+                android:text="0"
+                android:textSize="10dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="6.66dip"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:alpha="0.6"
+                android:text="米"
+                android:textSize="10dip" />
+
+            <TextView
+                android:id="@+id/kcal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6.66dip"
+                android:layout_marginRight="3dip"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:alpha="0.6"
+                android:text="0"
+                android:textSize="10dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:alpha="0.6"
+                android:text="千卡"
+                android:textSize="10dip" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/device_icon"
+            android:layout_width="18dip"
+            android:layout_height="18dip"
+            android:layout_below="@+id/info"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dip"
+            android:src="@drawable/icon_headview_band" />
+
+        <io.luciferldy.bnimation.view.ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="240dip"
+            android:layout_height="240dip"
+            android:layout_centerInParent="true"
+            app:stroke_width="1dip"
+            app:from_color="@android:color/white"
+            app:to_color="@android:color/transparent"
+            app:radius="100dip"/>
+
+        <io.luciferldy.bnimation.view.Comet
+            android:id="@+id/comet"
+            android:layout_width="240dip"
+            android:layout_height="240dip"
+            android:layout_centerInParent="true"
+            app:distance="100dip"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/run"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:layout_marginTop="10dip"
+        android:background="@android:color/holo_blue_light"
+        android:src="@drawable/run"/>
+
+    <Button
+        android:id="@+id/ss"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:textAllCaps="false"
+        android:text="start"/>
+
+    <io.luciferldy.bnimation.view.ProgressBar
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_marginTop="10dip"
+        app:radius="30dip"/>
+
+</LinearLayout>

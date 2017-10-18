@@ -99,7 +99,7 @@ public class RippleView extends View {
     }
 
     public interface Callback {
-        default void start() {}
+        void start();
         void update(float fraction);
         void end();
     }

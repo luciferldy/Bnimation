@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.luciferldy.bnimation.view.ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:from_color="@android:color/black"
+    app:to_color="@android:color/white"
+    app:angle_offset="3"
+    app:count="5"
+    app:stroke_width="2dip">
+
+</io.luciferldy.bnimation.view.ProgressBar>

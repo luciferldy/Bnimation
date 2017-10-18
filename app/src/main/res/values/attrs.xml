@@ -6,4 +6,15 @@
         <attr name="number" format="integer" />
         <attr name="duration" format="integer" />
     </declare-styleable>
+    <declare-styleable name="ProgressBar">
+        <attr name="stroke_width" format="dimension" />
+        <attr name="angle_offset" format="integer" />
+        <attr name="from_color" format="color" />
+        <attr name="to_color" format="color" />
+        <attr name="radius" format="dimension" />
+        <attr name="count" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="Comet">
+        <attr name="distance" format="dimension" />
+    </declare-styleable>
 </resources>
